@@ -9,7 +9,33 @@ import SwiftUI
 
 struct MainBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        TabView{
+            LoveScrollView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "heart.circle.fill")
+                        Text("People")
+                    }
+                }
+            
+            
+            MessagesView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "message")
+                        Text("Messages")
+                    }
+                }
+            
+            ProfileView()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "person.crop.square")
+                        Text("Profile")
+                    }
+                }
+        }
     }
 }
 
